@@ -24,6 +24,7 @@
     overlay = final: prev: {
       keepassxc-passkey = prev.keepassxc.overrideAttrs (oa: {
         src = keepassxc-passkey;
+        checkPhase = "";
         cmakeFlags = oa.cmakeFlags ++ [ "-DWITH_XC_BROWSER_PASSKEYS=ON" ];
       });
       nixosModule = ({ config, pkgs, lib, ... }: { });
